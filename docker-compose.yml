@@ -4,7 +4,7 @@ services:
   backend:
     container_name: code_editor_apis
     build:
-      context: ./ekshunno-apis
+      context: ./src/ekshunno-apis
     ports:
       - 3030:3030
     restart: unless-stopped
@@ -13,7 +13,7 @@ services:
   frontend:
     container_name: code_editor_ui
     build:
-      context: ./ekshunno-ui
+      context: ./src/ekshunno-ui
     #   dockerfile: ./Dockerfile.dev
     restart: unless-stopped
     ports:
