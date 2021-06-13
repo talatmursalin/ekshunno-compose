@@ -4,6 +4,3 @@
 [submodule "src/ekshunno-apis"]
 	path = src/ekshunno-apis
 	url = https://github.com/talatmursalin/ekshunno-apis
-[submodule "src/ekshunno-executor"]
-	path = src/ekshunno-executor
-	url = https://github.com/talatmursalin/ekshunno-executor
