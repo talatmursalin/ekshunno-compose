@@ -1,0 +1,32 @@
+version: "3.7"
+
+services:
+  backend:
+    container_name: code_editor_apis
+    build:
+      context: ./ekshunno-apis
+    ports:
+      - 3030:3030
+    restart: unless-stopped
+    networks:
+      - editor_network
+  frontend:
+    container_name: code_editor_ui
+    build:
+      context: ./ekshunno-ui
+    #   dockerfile: ./Dockerfile.dev
+    restart: unless-stopped
+    ports:
+      - 8080:80
+    networks:
+      - editor_network
+  messagequeue:
+    container_name: code_editor_rmq
+    image: rabbitmq:3
+    ports:
+      - 5672:5672
+    networks: 
+      - editor_network
+networks:
+    editor_network:
+     driver: bridge
